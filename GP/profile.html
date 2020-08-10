@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i&display=swap"rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/font/font2.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <title>Profile</title>
+</head>
+
+<body>
+  <div class="main-content">
+    <!-- Top navbar -->
+    <nav class="navbar navbar-expand-lg navbar-top  navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">User profile</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home</a>
+            <a class="nav-item nav-link" href="index.html">Logout</a>
+          </div>
+          <div class="navbar-nav ml-auto" id="nav-userContent">
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Nav -->
+    <!-- Header -->
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+      style="min-height: 600px; background-image: url(images/bg-2.jpg); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-default opacity-8"></span>
+      <!-- Header container -->
+      <div class="container-fluid d-flex align-items-center" id="header-data">
+        <!-- filling from JS-->
+
+
+      </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-md-12 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">My account</h3>
+                </div>
+                <div class="col-4 card-profile-image">
+                  <img src="images/person.jpg" class="rounded-circle" alt="person">
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="data">
+                <h6 class="heading-small text-muted mb-4">User information</h6>
+                <div class="pl-lg-4" id="user-data">
+                </div>
+                <hr class="  my-4">
+                <h6 class="heading-small text-muted mb-4">Dependents</h6>
+              </div>
+              <div class="container">
+                <div class="row" id="dependents">
+                  <!-- Filled from JS -->
+
+                </div>
+              </div>
+              <hr class="  my-4">
+              <button type="sumbit" class="btn btn-danger" id="btn-deleteAccount">Delete account</button>
+              <button type="sumbit" class="btn btn-info" id="add-user">Add User</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <footer class="footer">
+    <div class="row align-items-center justify-content-xl-between">
+      <div class="col-xl-6 m-auto text-center">
+        <div class="copyright">
+          <!-- <p>Made with <a href="#" target="_blank">IKA</a> by Creative Team</p> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <button class="btn btn-dark testing-show" type="sumbit" id="test-btn">teest</button> -->
+
+  <!-- *****************************************************************| Modals |****************************************************************************** -->
+  <!-- User data Modals -->
+  <div id="dependents-modals">
+  
+  </div>
+
+  <!-- End User data Modal -->
+
+  <div class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" id="edit-modal">
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- Add User Modal -->
+  <div class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" id="qr-modal">
+    <div class="modal-dialog modal-lg" role="document">
+      <form class="modal-content qr-form" id="qr-form">
+        <div class="modal-header">
+          <button type="button" class="close white" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Full Name</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="qr-name" placeholder="Full Name" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Work Position</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="qr-workPosition" placeholder="Work position" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Blood Type</label>
+            <div class="col-sm-4">
+              <!-- <input type="text" class="form-control" id="qr-bloodType" placeholder="choose" required> -->
+              <select id="qr-bloodType" class="form-control" required>
+                <option selected> ...</option>
+                <option>A</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>O</option>
+                <option>O+</option>
+                <option>O-</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Current Adrress</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="qr-address" placeholder="Current Address" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Close Person Name</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="qr-closeName1" placeholder="Close person name" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Close Person Address</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="qr-closeAddress1" placeholder="Close person address" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Close Person Phone</label>
+            <div class="col-sm-8">
+              <input type="phone" class="form-control" id="qr-closeNumber1" placeholder="Close person Number" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Another Close Person Name (optional)</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="qr-closeName2" placeholder="Close person name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Another Close Person Address (optional)</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="qr-closeAddress2" placeholder="Close person address">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-4 col-form-label">Another Close Person Phone (optional)</label>
+            <div class="col-sm-8">
+              <input type="phone" class="form-control" id="qr-closeNumber2" placeholder="Close person Number">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+            <button type="submit" class="btn btn-primary" id="addDependent">Create</button>
+          </div>
+      </form><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+  <!-- End Add User Modal -->
+
+  <!-- Scripts -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+
+</html>

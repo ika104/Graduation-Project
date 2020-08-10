@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font/font2.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>I'M HERE | INDEX</title>
+</head>
+<body>
+
+    <div class="container">
+        <section id="formHolder">
+    
+        <div class="row">
+    
+            <!-- Brand Box -->
+            <div class="col-sm-6 brand">
+                <a href="#" class="logo">I'M HERE <span> .</span></a>
+    
+                <div class="heading mr-auto">
+                    <!-- <i class="fas fa-map-marker-alt big-logo"></i> -->
+                    <h2>I'M HERE !</h2>
+                    <p class="mb-5">Your Right Choice</p>
+                    <img src="images/concept/enter1.svg" alt="" class="center ">
+                </div>
+    
+                <div class="success-msg">
+                    <p>Great! You are one of our members now</p>
+                    <a href="#" class="profile">Your Profile</a>
+                </div>
+            </div>
+    
+    
+            <!-- Form Box -->
+            <div class="col-sm-6 form">   
+                <!-- Login Form -->
+                <div class="login form-peice switched">
+                    <form class="login-form" action="#" method="post" id="login-form">
+                        <div class="form-group">
+                            <label for="loginemail">Email Adderss</label>
+                            <input type="email" name="loginemail" id="login-email" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" name="loginPassword" id="login-password" required>
+
+                        </div>
+        
+                        <div class="CTA">
+                            <button type="submit" value="Login" id="login-submit" ">Login</button>
+                            <a href="#" class="switch">I'm New</a>
+                            <!-- <a href="https://www.acadox.com" class="forgot ml-2" style="display: inline;">Forgot Passowrd ?!</a> -->
+                        </div>
+                    </form>
+                </div><!-- End Login Form -->
+    
+    
+                <!-- Signup Form -->
+                <div class="signup form-peice">
+                    <form class="signup-form"  id="signUp-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" name="username" id="signUp-name" class="name">
+                            <span class="error"></span>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="email">Email Adderss</label>
+                            <input type="email" name="emailAdress" id="signUp-email" class="email" required>
+                            <span class="error"></span>
+                        </div>    
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="signUp-password" class="pass">
+                            <span class="eye-pass">
+                                <i class="fa fa-eye" id="eye" onclick="toggle()"></i>
+                            </span>
+                            <p style="font-size: 12px;">Passwords must contain at least six characters, including uppercase, lowercase letters, numbers or the underscore.</p>
+                            <span class="error"></span>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="passwordCon">Confirm Password</label>
+                            <input type="password" name="passwordCon" id="signUp-passwordCon" class="passConfirm">
+                            <span class="error"></span>
+                        </div>
+        
+                        <div class="CTA">
+                            <button type="submit" id="signUp-submit">Signup</button>
+                            <a href="#" class="switch">I have an account</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- End Signup Form -->
+            </div>
+        </div>   
+        </section>
+
+       <!-- Footer -->
+         <footer>
+        <p>
+            <!-- Made with <i class="fa fa-heart" style="color: #848abd;font-size:medium" aria-hidden="true"></i>  -->
+        </p>
+        </footer> 
+        <!-- !End footer -->
+    </div>
+
+ <!-- Scripts -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
