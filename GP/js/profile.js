@@ -63,6 +63,7 @@ function displayAccountData(accountData)
    let headerData ="";
    let data = "" ;
    let editProfileData ="";
+   let getFirstName = accountData.name.split(" ");
 
    navData =`<div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
@@ -75,7 +76,7 @@ function displayAccountData(accountData)
    
    headerData =`<div class="row">
                     <div class="col-lg-7 col-md-10">
-                        <h1 class="display-2 text-white">Hello,`+accountData.name+`</h1>
+                        <h1 class="display-2 text-white">Hello, `+getFirstName[0]+`</h1>
                         <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your data</p>
                         <a href="#!" class="btn btn-info" id="edit-profile">Edit profile</a>
                     </div>
@@ -204,6 +205,12 @@ function addAccountDependent()
     let closePerAddress2 = $("#qr-closeAddress2").val();
     let accountId = sessionStorage.getItem("userId");
     let accountName = sessionStorage.getItem("userName");
+
+    if(name.length ==0||workPosition.length==0||bloodType.length==0||currAddress.length==0||closePerName.length==0||closePerPhone.length==0||closePerAddress.length==0)
+    {
+        alert("Error, Try again entering all required fields !!");
+        return false;
+    }
     $.ajax({
         accept:"application/json",
         type:"POST",
@@ -263,10 +270,10 @@ function getAccountDependents()
             console.log('Getting users data done');
             console.log("Users Array lenght:  " + users.length);
             displayDependents(users.length); 
-            $('.showUserModal').on('click', function(e){
-                $('#userData-modal').modal('show');
-                e.preventDefault();
-              });
+            // $('.showUserModal').on('click', function(e){
+            //     $('#userData-modal').modal('show');
+            //     e.preventDefault();
+            //   });
 
         },
         error: function(){
@@ -285,15 +292,15 @@ function displayDependents(usersLength)
    {
     dependentsCards += `<div class="dependent mx-2 mt-4">
                         <div class="card " style="width:18rem;">
-                            <img src="images/person.jpg" class="card-img-top" alt="..." style="height: 15rem;">
+                            <img src="images/person2.png" class="card-img-top" alt="..." style="height: 15rem;">
                             <div class="card-body">
                             <h3 class="card-title">`+users[i].name+`</h3>
-                            <a href="#" class="btn btn-primary showUserModal" id="btn-`+users[i].id+`">Show</a>
+                            <a href="#" class="btn btn-primary showUserModal"  data-toggle="modal" data-target="#userData-modal-`+users[i].id+`">Show</a>
                             </div>
                         </div>
                     </div>`;
 
-    dependentModal += ` <div class="modal fade bd-example-modal-md " tabindex="-1" role="dialog" id="userData-modal">    
+    dependentModal += ` <div class="modal fade bd-example-modal-md " tabindex="-1" role="dialog" id="userData-modal-`+users[i].id+`">    
                             <div class="modal-dialog modal-lg " role="document">
                                 <div class="modal-content ">
                                     <div class="modal-header">
